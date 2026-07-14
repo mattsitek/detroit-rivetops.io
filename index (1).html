@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1B3A5F" />
+<title>Rivet — AI Employees for Metro Detroit Businesses</title>
+<meta name="description" content="Metro Detroit business owners: stop losing revenue to missed calls and manual busywork. Rivet builds AI employees that fix the one bottleneck costing you money." />
+<meta property="og:title" content="Metro Detroit Owners — Put an AI Employee to Work" />
+<meta property="og:description" content="One tree service booked $80K in a single storm weekend off calls that used to go to voicemail. See how Rivet does it." />
+<meta property="og:url" content="https://detroit.rivetops.io" />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1B3A5F;          /* brand primary (from rivetops.io) */
+    --navy-deep:#12263f;
+    --orange:#ed895a;        /* brand accent */
+    --orange-dk:#e3703c;
+    --bg:#ffffff;
+    --bg-soft:#f4f8fc;
+    --ink:#1c2b3a;
+    --muted:#5c6b7c;
+    --line:#e2eaf2;
+    --good:#1a9e6a;
+    --maxw:1080px;
+    --shadow:0 10px 40px rgba(27,58,95,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Poppins',sans-serif;color:var(--navy);line-height:1.12;letter-spacing:-.01em}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  a{color:inherit}
+  .accent{color:var(--orange)}
+  .wordmark{font-family:'Pacifico',cursive;font-weight:400;color:var(--navy);font-size:1.7rem;line-height:1}
+  .wordmark .accent{color:var(--orange)}
+
+  .btn{display:inline-block;background:var(--orange);color:#fff;font-family:'Poppins',sans-serif;font-weight:700;
+    padding:16px 30px;border-radius:12px;text-decoration:none;border:none;cursor:pointer;font-size:1.05rem;
+    box-shadow:0 8px 24px rgba(237,137,90,.4);transition:transform .12s ease,box-shadow .12s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(237,137,90,.5);background:var(--orange-dk)}
+  .btn-lg{font-size:1.15rem;padding:18px 36px}
+  .btn-ghost{background:transparent;color:var(--navy);box-shadow:none;font-weight:600;padding:10px 4px;font-size:1rem}
+  .btn-ghost:hover{background:transparent;color:var(--orange-dk);transform:none;box-shadow:none}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:12px 22px;max-width:var(--maxw);margin:0 auto}
+  .nav .btn{padding:11px 22px;font-size:.95rem}
+  @media(max-width:560px){.nav .btn{padding:9px 16px;font-size:.85rem}.wordmark{font-size:1.45rem}}
+
+  /* HERO */
+  .hero{background:linear-gradient(180deg,#f4f8fc 0%,#ffffff 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .hero-in{padding:64px 0 56px;text-align:center;position:relative;z-index:2}
+  .eyebrow{display:inline-block;font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--orange-dk);background:rgba(237,137,90,.12);padding:8px 16px;border-radius:100px;margin-bottom:20px}
+  .hero h1{font-size:clamp(2.1rem,5.4vw,3.5rem);font-weight:800;margin-bottom:18px}
+  .hero h1 .accent{color:var(--orange)}
+  .hero p.sub{max-width:640px;margin:0 auto 28px;font-size:clamp(1.08rem,2.3vw,1.28rem);color:var(--muted)}
+  .hero .cta-row{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+  .microtrust{margin-top:16px;color:var(--muted);font-size:.88rem}
+  .microtrust strong{color:var(--navy)}
+
+  /* VIDEO SECTION (right under hero) */
+  .videos{padding:56px 0;background:var(--bg)}
+  .sec-head{text-align:center;max-width:680px;margin:0 auto 34px}
+  .sec-head h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:700;margin-bottom:12px}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+  .testi{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:720px;margin:0 auto 22px}
+  .cell{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+  .cell .meta{padding:14px 18px}
+  .cell .meta .name{font-family:'Poppins',sans-serif;font-weight:700;color:var(--navy);font-size:1rem}
+  .cell .meta .role{color:var(--muted);font-size:.85rem;margin-bottom:6px}
+  .cell .meta .result{color:var(--orange-dk);font-family:'Poppins',sans-serif;font-weight:700;font-size:.92rem}
+  @media(max-width:640px){.testi{grid-template-columns:1fr;max-width:360px}}
+
+  /* YouTube FACADE */
+  .yt-facade{position:relative;width:100%;background:linear-gradient(135deg,#2a4d73,#12263f);background-color:#1B3A5F;
+    overflow:hidden;cursor:pointer;background-size:cover;background-position:center;transition:transform .15s ease}
+  .cell .yt-facade{border-radius:0}
+  .yt-facade.wide{aspect-ratio:16/9;max-width:820px;margin:0 auto;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .yt-facade[data-ratio="9x16"]{aspect-ratio:9/16}
+  .yt-facade[data-ratio="16x9"]{aspect-ratio:16/9}
+  .yt-facade::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,38,63,.15),rgba(18,38,63,.55))}
+  .yt-facade .play{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:72px;height:72px;border-radius:50%;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;box-shadow:0 6px 24px rgba(237,137,90,.55);transition:transform .15s}
+  .yt-facade:hover .play{transform:translate(-50%,-50%) scale(1.08)}
+  .yt-facade .badge{position:absolute;z-index:2;bottom:12px;left:14px;right:14px;color:#fff;font-size:.85rem;font-weight:600;text-shadow:0 1px 4px rgba(0,0,0,.7)}
+  .yt-facade iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:3}
+
+  /* PROOF OF THE DREAM */
+  .dream{background:var(--navy);color:#fff;padding:64px 0}
+  .dream h2{color:#fff;text-align:center;font-size:clamp(1.7rem,4.2vw,2.5rem);font-weight:800;max-width:760px;margin:0 auto 14px}
+  .dream h2 .accent{color:var(--orange)}
+  .dream .lead{text-align:center;color:#c4d3e2;max-width:640px;margin:0 auto 40px;font-size:1.12rem}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:900px;margin:0 auto}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:24px 14px;text-align:center}
+  .stat .n{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.6vw,2.2rem);color:var(--orange)}
+  .stat .l{color:#c4d3e2;font-size:.85rem;margin-top:6px}
+  @media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+  /* HOW IT WORKS (short) */
+  .how{padding:60px 0;background:var(--bg-soft)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:var(--maxw);margin:0 auto}
+  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:var(--shadow)}
+  .card .ic{font-size:1.7rem;margin-bottom:10px}
+  .card h3{font-size:1.12rem;font-weight:700;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+  @media(max-width:800px){.cards{grid-template-columns:1fr}}
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:840px;margin:0 auto}
+  .col{border-radius:16px;padding:26px 24px;box-shadow:var(--shadow)}
+  .col .tag{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .col ul{list-style:none}
+  .col li{position:relative;padding-left:28px;margin-bottom:11px;font-size:.98rem;color:var(--ink)}
+  .col li::before{position:absolute;left:0;top:0;font-weight:700}
+  .col-tool{background:#fff;border:1px solid var(--line)}
+  .col-tool .tag{color:var(--muted)}
+  .col-tool li{color:var(--muted)}
+  .col-tool li::before{content:"✕";color:#c2ccd6}
+  .col-emp{background:var(--navy);border:1px solid var(--navy)}
+  .col-emp .tag{color:#fff;border-bottom-color:rgba(255,255,255,.18)}
+  .col-emp li{color:#e6eef6}
+  .col-emp li::before{content:"✓";color:var(--orange)}
+  @media(max-width:700px){.compare{grid-template-columns:1fr}}
+
+  /* FORM */
+  .form-sec{padding:64px 0;background:var(--bg)}
+  .form-card{max-width:520px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 32px;box-shadow:var(--shadow);text-align:center}
+  .form-card h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:800;margin-bottom:8px}
+  .form-card .fsub{color:var(--muted);margin-bottom:26px;font-size:1.05rem}
+  .field{margin-bottom:14px;text-align:left}
+  .field input{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:12px;color:var(--ink);padding:16px 16px;font-size:1.05rem;font-family:inherit;transition:border-color .15s}
+  .field input:focus{outline:none;border-color:var(--orange)}
+  .form-card .btn{width:100%;margin-top:6px}
+  .form-note{color:var(--muted);font-size:.85rem;margin-top:14px}
+  .book-alt{margin-top:18px}
+  .book-alt a{color:var(--navy);font-weight:600;font-size:.98rem;text-decoration:none;border-bottom:2px solid var(--orange);padding-bottom:2px}
+  #thanks{display:none}
+  #thanks .big{font-family:'Poppins',sans-serif;font-weight:800;font-size:1.6rem;color:var(--good);margin-bottom:8px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:.85rem;background:var(--bg)}
+  footer .wordmark{font-size:1.4rem;display:inline-block;margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <div class="wordmark">Rivet<span class="accent">.</span></div>
+    <a href="#apply" class="btn">Get My Free Call</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-in">
+    <span class="eyebrow">Metro Detroit · AI that actually does the job</span>
+    <h1>Everyone's buying AI tools.<br>The smart money is <span class="accent">hiring AI employees.</span></h1>
+    <p class="sub">A tool does a task, then collects dust. An employee learns your business and finishes the job. I'm Matt Sitek — I help Metro Detroit companies figure out where AI actually fits, then build the one hire that pays for itself.</p>
+    <div class="cta-row">
+      <a href="#apply" class="btn btn-lg">Get My Free Strategy Call →</a>
+    </div>
+    <div class="microtrust">Takes 10 seconds. <strong>No pressure, no obligation.</strong></div>
+  </div>
+</section>
+
+<!-- VIDEOS — right under the hero -->
+<section class="videos" id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What happens when you hire the work out to AI.</h2>
+      <p>Real Metro Detroit businesses, filmed on their phones. Not tools they bought — jobs they handed off.</p>
+    </div>
+    <!-- Two testimonials on top -->
+    <div class="testi">
+      <div class="cell">
+        <div class="yt-facade" data-yt="_O2DXeRSDeg" data-ratio="9x16" data-title="Tree Service Owner"></div>
+        <div class="meta">
+          <div class="name">Kyle · Tree Service</div>
+          <div class="role">Metro Detroit</div>
+          <div class="result">$80K booked in one storm weekend</div>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="yt-facade" data-yt="fPRwrdpfUHs" data-ratio="9x16" data-title="Strike Force Striping"></div>
+        <div class="meta">
+          <div class="name">Strike Force Striping</div>
+          <div class="role">Paving &amp; Striping</div>
+          <div class="result">$12K → $450K in pipeline</div>
+        </div>
+      </div>
+    </div>
+    <!-- Mike Elder wide video below -->
+    <div class="yt-facade wide" data-yt="Y1SUDFLg9xQ" data-ratio="16x9" data-title="How we built it: the Mike Elder story"></div>
+  </div>
+</section>
+
+<!-- PROOF OF THE DREAM -->
+<section class="dream">
+  <div class="wrap">
+    <h2>A tool does a task. An <span class="accent">employee does the job.</span></h2>
+    <p class="lead">The businesses winning with AI aren't the ones with the most subscriptions. They're the ones who hired AI for the one job that was actually costing them — and let it run.</p>
+    <div class="stats">
+      <div class="stat"><div class="n">$80K</div><div class="l">booked in one storm weekend</div></div>
+      <div class="stat"><div class="n">98%</div><div class="l">of 157 storm calls answered</div></div>
+      <div class="stat"><div class="n">60→2 min</div><div class="l">per estimate, priced right</div></div>
+      <div class="stat"><div class="n">12 hrs</div><div class="l">a week back to the owner</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Hire AI like an employee. Don't buy another tool.</h2>
+      <p>Not sure where AI even fits yet? That's the first thing we figure out together — then I build the one hire that earns its keep.</p>
+    </div>
+    <div class="compare">
+      <div class="col col-tool">
+        <div class="tag">Buying a tool</div>
+        <ul>
+          <li>Does one narrow task</li>
+          <li>You configure it and babysit it</li>
+          <li>Breaks the moment your process changes</li>
+          <li>Another login, another subscription</li>
+          <li>Never actually learns your business</li>
+        </ul>
+      </div>
+      <div class="col col-emp">
+        <div class="tag">Hiring an AI employee</div>
+        <ul>
+          <li>Owns the whole job, start to finish</li>
+          <li>Trained on your pricing, calendar and systems</li>
+          <li>Adapts as you grow</li>
+          <li>One accountable partner — me</li>
+          <li>Gets sharper the longer it runs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM: name + email only -->
+<section class="form-sec" id="apply">
+  <div class="wrap">
+    <div class="form-card">
+      <div id="formview">
+        <h2>Get your free strategy call</h2>
+        <p class="fsub">Tell me where to reach you. I'll follow up personally and we'll find the one fix that moves the needle.</p>
+        <form id="leadform" onsubmit="return handleLead(event)">
+          <!-- honeypot -->
+          <input type="text" name="company_url" id="company_url" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true" />
+          <div class="field"><input id="name" name="name" type="text" required placeholder="Your name" autocomplete="name" /></div>
+          <div class="field"><input id="email" name="email" type="email" required placeholder="Email address" autocomplete="email" /></div>
+          <button type="submit" class="btn btn-lg">Get My Free Strategy Call →</button>
+          <div class="form-note">Detroit-based · You'll hear back fast, usually same day.</div>
+        </form>
+        <div class="book-alt">
+          <a href="https://calendly.com/hello-rivetops/metro-detroit-growth-call-20-min" target="_blank" rel="noopener">Prefer to just book a time? →</a>
+        </div>
+      </div>
+      <div id="thanks">
+        <div class="big">Got it. 🤝</div>
+        <p style="color:var(--muted)">Thanks — I'll reach out shortly. Keep an eye on your inbox.</p>
+        <div class="book-alt"><a href="https://calendly.com/hello-rivetops/metro-detroit-growth-call-20-min" target="_blank" rel="noopener">Want to skip ahead and book a time now? →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="wordmark">Rivet<span class="accent">.</span></div>
+    <div>AI employees for Metro Detroit businesses · detroit.rivetops.io</div>
+    <div style="margin-top:6px">© <span id="yr"></span> Rivet Automation · Detroit, MI</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ===== YouTube facades (click to load — keeps the page fast) =====
+  document.querySelectorAll('.yt-facade').forEach(function(el){
+    var id = el.getAttribute('data-yt');
+    var title = el.getAttribute('data-title') || 'Watch';
+    var hasRealId = id && !/^YT_ID_/.test(id);
+    if (hasRealId){
+      var img = new Image();
+      img.onload = function(){ if(img.naturalWidth > 120) el.style.backgroundImage = "url('"+img.src+"')"; };
+      img.src = "https://i.ytimg.com/vi/"+id+"/maxresdefault.jpg";
+    }
+    var play = document.createElement('div'); play.className='play'; play.textContent='▶'; el.appendChild(play);
+    var badge = document.createElement('div'); badge.className='badge';
+    badge.textContent = hasRealId ? title : (title + ' · add YouTube ID');
+    el.appendChild(badge);
+    el.addEventListener('click', function(){
+      if (!hasRealId) return;
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('allowfullscreen','');
+      iframe.setAttribute('title', title);
+      iframe.src = "https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+      el.innerHTML=''; el.appendChild(iframe); el.style.cursor='default';
+    });
+  });
+
+  // ===== Lead handler → detroit-lead edge function =====
+  const LEAD_WEBHOOK = "https://jyhkhptuhgmkasyaavzi.supabase.co/functions/v1/detroit-lead";
+  async function handleLead(e){
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    data.source = "detroit.rivetops.io";
+    data.ts = new Date().toISOString();
+    document.getElementById('formview').style.display = 'none';
+    document.getElementById('thanks').style.display = 'block';
+    try { await fetch(LEAD_WEBHOOK, {method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(data)}); }
+    catch(err){ console.error("lead post failed", err); }
+    return false;
+  }
+</script>
+</body>
+</html>
